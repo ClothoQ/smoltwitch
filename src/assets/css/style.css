@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+
+.grid-container {
+    display: grid;
+    margin-bottom: 70px;
+    padding: 0px;
+
+}
+
+.grid-container--fit {
+      grid-template-columns: repeat(auto-fill, minmax(50px, 0.1fr));
+}
+
+.streamers{
+   overflow:scroll;
+   height:100% !important;
+   position: absolute;
+   width:100%;
+}::-webkit-scrollbar {
+    display: none;
+}
+
+.grid-element {
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  transition: width 0.1s, height 0.1s;
+  transition-timing-function: linear;
+}
+
+.grid-element > img{
+    width: 100% !important;
+    padding: 4px;
+    opacity: 0.8;
+
+}
+
+.grid-element > img:hover{
+    opacity: 1;
+}
+
+
+a{
+   cursor: pointer !important;
+}
+
+@media only screen and (max-width: 400px) {
+  .gameTitle{
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 415px) {
+  .grid-element {
+    width: 53.2px;
+    height:53.2px;
+  }
+  .grid-container--fit {
+        grid-template-columns: repeat(auto-fill, minmax(53.2px, 0.1fr));
+  }
+}
+
+
+@media only screen and (min-width: 450px) {
+  .grid-element {
+    width: 56.2px;
+    height:56.2px;
+  }
+  .grid-container--fit {
+        grid-template-columns: repeat(auto-fill, minmax(56.2px, 0.1fr));
+  }
+}
+
+
+@media only screen and (min-width: 650px) {
+  .grid-element {
+    width: 70px;
+    height: 70px;
+  }
+  .grid-container--fit {
+        grid-template-columns: repeat(auto-fill, minmax(70px, 0.1fr));
+  }
+}
+
+@media only screen and (min-width: 950px) {
+  .grid-element {
+    width: 140px;
+    height: 140px;
+  }
+  .grid-container--fit {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 0.1fr));
+  }
+}
+
+  *{
+    font-family: 'Roboto', sans-serif;
+    user-select: none;
+  }
+
+  body{
+    background: #21202E !important;
+    overflow: hidden;
+
+  }
+
+  .custom{
+    width: 300px;
+    margin: 10px 0px 10px 0px;
+    text-align: center;
+    background: none;
+    border: 1px solid #353442;
+    border-radius: 0px;
+    color:#686581;
+  }
+
+  .custom::placeholder {
+    color: #686581;
+  }
+
+  .custom:focus{
+    background: none;
+    border: 1px solid #514f64;
+    color:#817e9a;
+
+  }
+
+  input, textarea {
+    outline: none;
+    box-shadow:none !important;
+  }
+
+  .center-UI{
+    min-height: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .hide{
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .hide:hover{
+    opacity: 0.98;
+  }
+
+  .hideT{
+      opacity:0.1;
+  }
+
+  .login{
+    margin: auto;
+  }
+
+  .ui-login{
+    transition: opacity 0.3s;
+    -webkit-transition: opacity 0.3s;
+    opacity: 1;
+  }
+
+  .form-control{
+    border-radius: 0px;
+  }
+
+  .menu{
+    width: 100%;
+    background: rgba(1,1,1,0.4);
+    position: fixed;
+    opacity: 0;
+  }
+
+  .menu:hover{
+    opacity: 1;
+  }
+
+  .loginMsg{
+    color: #E4E4EE;
+    font-weight: 300;
+  }
+
+
+  .navCustom{
+    background-color: #161523;
+
+  }
+  .addUser{
+      transition: width 0.2s;
+  }
+
+  .blink{
+    animation: blink 2s infinite;
+  }
+
+
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .stream{
+    top: 5px !important;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .menuButtons{
+    opacity: 0.8;
+  }
+
+  .menuButtons:hover{
+    opacity: 0.9 !important;
+  }

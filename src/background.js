@@ -21,6 +21,21 @@ const ipcRenderer = require('electron').ipcRenderer;
 const { autoUpdater } = require("electron-updater")
 
 protocol.registerStandardSchemes(['app'], { secure: true })
+
+function appController(window){
+    ipcMain.on('resize', function (e, x, y) {
+        window.setSize(x, y);
+    });
+
+    ipcMain.on('close', function () {
+        window.close()
+    });
+
+    setInterval(function() {
+          window.setAlwaysOnTop(true);
+    }, 2000);
+}
+
 function createMainWindow () {
 
   var config = require('./config.json');
@@ -36,16 +51,6 @@ function createMainWindow () {
     window.webContents.on('new-window', function(e, url) {
       e.preventDefault();
     });
-
-    ipcMain.on('resize', function (e, x, y) {
-        window.setSize(x, y);
-    });
-
-    ipcMain.on('close', function () {
-          console.log("aaa")
-          window.close()
-    });
-
 
   if (isDevelopment) {
     window.loadURL(process.env.WEBPACK_DEV_SERVER_URL)
@@ -72,9 +77,6 @@ function createMainWindow () {
     })
   })
 
-  setInterval(function() {
-        window.setAlwaysOnTop(true);
-  }, 2000);
   return window
 }
 
@@ -95,4 +97,5 @@ app.on('ready', async () => {
     await installVueDevtools()
   }
   mainWindow = createMainWindow()
+  appController(mainWindow);
 })
